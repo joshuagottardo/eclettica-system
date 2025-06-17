@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -7,150 +8,139 @@
   <link href="/style.css" rel="stylesheet" />
   <script src="components/header.js"></script>
   <script type="module" src="/main.js"></script>
+  <script type="module" src="pages/inserimento.js"></script>
 </head>
-<body class="min-h-screen flex flex-col bg-gray-100 text-gray-900 font-sans">
+<body class="min-h-screen flex flex-col bg-custom-900 text-gray-200 font-sans">
 
-  <!-- Toolbar/Header 
-  <header class="h-14 flex items-center px-4 bg-gray-800 text-gray-300 border-b border-gray-700">
-    <div class="flex gap-4">
-      <button id="btn-search" title="Ricerca" class="hover:text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
-             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round"
-                d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1116.65 6.65a7.5 7.5 0 010 10.6z" />
-        </svg>
-      </button>
+  <nav class="w-full bg-custom-800 py-3 px-4 flex gap-4 items-center shadow-lg">
+    <a href="/ricerca.html" title="Ricerca" class="text-gray-100 hover:text-custom-100 transition text-2xl">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <circle cx="11" cy="11" r="7" stroke-width="2"/>
+        <line x1="21" y1="21" x2="16.65" y2="16.65" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </a>
+    <a href="/inserimento.html" title="Nuovo articolo" class="text-gray-100 hover:text-custom-100 transition text-2xl">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <line x1="12" y1="5" x2="12" y2="19" stroke-width="2" stroke-linecap="round"/>
+        <line x1="5" y1="12" x2="19" y2="12" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </a>
+  </nav>
 
-      <button id="btn-add" title="Aggiungi" class="hover:text-white">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
-             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round"
-                d="M12 4v16m8-8H4" />
-        </svg>
-      </button>
-    </div>
-  </header> -->
-
-  <div id="header-container"></div>
-
-    <main class="flex flex-grow w-full overflow-hidden">
-
+  <main class="flex flex-grow w-full overflow-hidden">
     <!-- Colonna sinistra -->
-    <section class="w-1/2 overflow-y-auto p-6 border-r border-gray-700">
-      <h2 class="text-2xl font-bold mb-6">INSERIMENTO</h2>
-      <form class="space-y-4">
+    <section class="w-1/2 overflow-y-auto p-6 border-r border-custom-100 space-y-8">
+      <h2 class="text-2xl mb-6 text-center">INSERISCI UN NUOVO ARTICOLO</h2>
 
-        <!-- Articolo -->
-        <div>
+      <!-- Dati Articolo -->
+      <div>
+        <h3 class="text-lg font-semibold text-neutral-600 mb-2 border-b border-custom-600 pb-1">Dati articolo</h3>
+
+        <div class="mb-4">
           <label class="block mb-1 text-sm">NOME</label>
-          <input type="text" class="w-3/4 bg-gray-800 text-white rounded p-2" />
+          <input type="text" class="w-3/4 bg-custom-800 text-white rounded p-2" />
         </div>
 
-        <!-- Tipo -->
-        <div>
+        <div class="mb-4">
           <label class="block mb-1 text-sm">TIPO</label>
-          <select class="w-3/4 bg-gray-800 text-white rounded p-2">
+          <select class="w-3/4 bg-custom-800 text-white rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-custom-500">
             <option>zeppa</option>
             <option>ceppo</option>
             <option>tacco</option>
           </select>
         </div>
 
-        <!-- Materiale (checkbox multipli) -->
-        <div>
-          <label class="block mb-1 text-sm">MATERIALE</label>
-          <div class="flex flex-wrap gap-4">
-            <label><input type="checkbox" class="mr-1" /> PU</label>
-            <label><input type="checkbox" class="mr-1" /> legno</label>
-            <label><input type="checkbox" class="mr-1" /> sughero</label>
-            <label><input type="checkbox" class="mr-1" /> sughero rigenerato</label>
-            <label><input type="checkbox" class="mr-1" /> tampografato</label>
-            <label><input type="checkbox" class="mr-1" /> PU ricoperto</label>
-            <label><input type="checkbox" class="mr-1" /> plexi</label>
-          </div>
-        </div>
-
-        <!-- Pezzi -->
-        <div>
+                <div class="mb-4">
           <label class="block mb-1 text-sm">NUMERO PEZZI</label>
-          <input type="number" min="1" class="w-3/4 bg-gray-800 text-white rounded p-2" />
+          <input type="number" min="1" class="w-3/4 bg-custom-800 text-white rounded p-2" />
         </div>
+      </div>
 
-        <!-- Altezza -->
-        <div>
+      <!-- Dettagli tecnici -->
+      <div>
+        <h3 class="text-lg font-semibold text-neutral-600 mb-2 border-b border-custom-600 pb-1">Dettagli tecnici</h3>
+
+
+
+              <!-- Materiali -->
+      <div class="p-4 bg-custom-800 rounded-lg mb-4">
+        <label class="block mb-3 text-sm">MATERIALI</label>
+        <div class="flex flex-wrap gap-3">
+          <label class="cursor-pointer"><input type="checkbox" name="materiale" value="pu" class="peer hidden" /><div class="px-4 py-2 rounded-xl border border-custom-100 text-neutral-600 peer-checked:bg-custom-300 peer-checked:text-white transition peer-hover:text-white">PU</div></label>
+          <label class="cursor-pointer"><input type="checkbox" name="materiale" value="legno" class="peer hidden" /><div class="px-4 py-2 rounded-xl border border-custom-100 text-neutral-600 peer-checked:bg-custom-300 peer-checked:text-white transition peer-hover:text-white">Legno</div></label>
+          <label class="cursor-pointer"><input type="checkbox" name="materiale" value="sughero" class="peer hidden" /><div class="px-4 py-2 rounded-xl border border-custom-100 text-neutral-600 peer-checked:bg-custom-300 peer-checked:text-white transition peer-hover:text-white">Sughero</div></label>
+          <label class="cursor-pointer"><input type="checkbox" name="materiale" value="sughero_rigenerato" class="peer hidden" /><div class="px-4 py-2 rounded-xl border border-custom-100 text-neutral-600 peer-checked:bg-custom-300 peer-checked:text-white transition peer-hover:text-white">Sughero Rigenerato</div></label>
+          <label class="cursor-pointer"><input type="checkbox" name="materiale" value="tampografato" class="peer hidden" /><div class="px-4 py-2 rounded-xl border border-custom-100 text-neutral-600 peer-checked:bg-custom-300 peer-checked:text-white transition peer-hover:text-white">Tampografato</div></label>
+          <label class="cursor-pointer"><input type="checkbox" name="materiale" value="pu_ricoperto" class="peer hidden" /><div class="px-4 py-2 rounded-xl border border-custom-100 text-neutral-600 peer-checked:bg-custom-300 peer-checked:text-white transition peer-hover:text-white">PU Ricoperto</div></label>
+          <label class="cursor-pointer"><input type="checkbox" name="materiale" value="plexi" class="peer hidden" /><div class="px-4 py-2 rounded-xl border border-custom-100 text-neutral-600 peer-checked:bg-custom-300 peer-checked:text-white transition peer-hover:text-white">Plexi</div></label>
+        </div>
+      </div>
+
+        <div class="mb-4">
           <label class="block mb-1 text-sm">ALTEZZA</label>
-          <input type="number" min="1" class="w-3/4 bg-gray-800 text-white rounded p-2" />
+          <input type="number" min="1" class="w-3/4 bg-custom-800 text-white rounded p-2" />
         </div>
 
-        <!-- Punta -->
-        <div>
+        <div class="mb-4">
           <label class="block mb-1 text-sm">PUNTA</label>
-          <select class="w-3/4 bg-gray-800 text-white rounded p-2">
+          <select class="w-3/4 bg-custom-800 text-white rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-custom-500">
             <option>punta 1</option>
             <option>punta 2</option>
             <option>punta 3</option>
           </select>
         </div>
 
-        <!-- Tacco -->
-        <div>
+        <div class="mb-4">
           <label class="block mb-1 text-sm">TACCO</label>
-          <select class="w-3/4 bg-gray-800 text-white rounded p-2">
+          <select class="w-3/4 bg-custom-800 text-white rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-custom-500">
             <option>tacco 1</option>
             <option>tacco 2</option>
             <option>tacco 3</option>
           </select>
         </div>
+      </div>
 
-        <!-- Accessori -->
-        <div>
+      <!-- Altri dettagli -->
+      <div>
+        <div class="mb-4">
           <label class="block mb-1 text-sm">ACCESSORI</label>
-          <input type="text" class="w-3/4 bg-gray-800 text-white rounded p-2" />
+          <input type="text" class="w-3/4 bg-custom-800 text-white rounded p-2" />
         </div>
 
-        <!-- Azienda -->
-        <div>
+        <div class="mb-4">
           <label class="block mb-1 text-sm">AZIENDA</label>
-          <select class="w-1/2 bg-gray-800 text-white rounded p-2">
+          <select class="w-3/4 bg-custom-800 text-white rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-custom-500">
             <option>azienda 1</option>
             <option>azienda 2</option>
             <option>azienda 3</option>
           </select>
         </div>
+      </div>
 
-        <button type="submit" class="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-4 rounded">
-            Aggiungi articolo
+      <div class="mt-8">
+        <button type="submit" class="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-2 px-6 rounded">
+          Aggiungi articolo
         </button>
-
-      </form>
+      </div>
     </section>
 
     <!-- Colonna destra -->
     <section class="w-1/2 p-6 flex flex-col gap-6">
-
-      <!-- FOTO PRINCIPALE -->
-      <div class="image-drop relative bg-gray-700 rounded-lg shadow-inner flex items-center justify-center text-gray-300" data-id="principale">
+      <div class="image-drop relative bg-custom-700 rounded-lg shadow-inner flex items-center justify-center" data-id="principale">
         FOTO PRINCIPALE
       </div>
-
-      <!-- Griglia 3x3 -->
       <div class="grid grid-cols-3 gap-4">
-        <div class="image-drop relative bg-gray-700 rounded shadow-inner flex items-center justify-center text-gray-300" data-id="esterno">LATO ESTERNO</div>
-        <div class="image-drop relative bg-gray-700 rounded shadow-inner flex items-center justify-center text-gray-300" data-id="interno">LATO INTERNO</div>
-        <div class="image-drop relative bg-gray-700 rounded shadow-inner flex items-center justify-center text-gray-300" data-id="sopra">SOPRA</div>
-        <div class="image-drop relative bg-gray-700 rounded shadow-inner flex items-center justify-center text-gray-300" data-id="sotto">SOTTO</div>
-        <div class="image-drop relative bg-gray-700 rounded shadow-inner flex items-center justify-center text-gray-300" data-id="punta">PUNTA</div>
-        <div class="image-drop relative bg-gray-700 rounded shadow-inner flex items-center justify-center text-gray-300" data-id="tacco">TACCO</div>
-        <div class="image-drop relative bg-gray-700 rounded shadow-inner flex items-center justify-center text-gray-300" data-id="accessorio">ACCESSORIO</div>
-        <div class="image-drop relative bg-gray-700 rounded shadow-inner flex items-center justify-center text-gray-300" data-id="articolo">ARTICOLO</div>
-        <div class="image-drop relative bg-gray-700 rounded shadow-inner flex items-center justify-center text-gray-300" data-id="finitura">FINITURA</div>
+        <div class="image-drop relative bg-custom-700 rounded shadow-inner flex items-center justify-center" data-id="esterno">LATO ESTERNO</div>
+        <div class="image-drop relative bg-custom-700 rounded shadow-inner flex items-center justify-center" data-id="interno">LATO INTERNO</div>
+        <div class="image-drop relative bg-custom-700 rounded shadow-inner flex items-center justify-center" data-id="sopra">SOPRA</div>
+        <div class="image-drop relative bg-custom-700 rounded shadow-inner flex items-center justify-center" data-id="sotto">SOTTO</div>
+        <div class="image-drop relative bg-custom-700 rounded shadow-inner flex items-center justify-center" data-id="punta">PUNTA</div>
+        <div class="image-drop relative bg-custom-700 rounded shadow-inner flex items-center justify-center" data-id="tacco">TACCO</div>
+        <div class="image-drop relative bg-custom-700 rounded shadow-inner flex items-center justify-center" data-id="accessorio">ACCESSORIO</div>
+        <div class="image-drop relative bg-custom-700 rounded shadow-inner flex items-center justify-center" data-id="articolo">ARTICOLO</div>
+        <div class="image-drop relative bg-custom-700 rounded shadow-inner flex items-center justify-center" data-id="finitura">FINITURA</div>
       </div>
-
-      <button id="get-articoli" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded shadow-lg transition-all">
-        Visualizza Articoli
-      </button>
     </section>
   </main>
-
 </body>
 </html>
