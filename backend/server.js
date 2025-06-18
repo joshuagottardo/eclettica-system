@@ -76,17 +76,7 @@ app.get("/api/articoli/:id", async (req, res) => {
         a.tacco,
         a.accessori,
         az.nome AS nome_azienda,
-        az.brand AS brand_azienda,
-        a.foto_principale,
-        a.foto_esterno,
-        a.foto_interno,
-        a.foto_sopra,
-        a.foto_sotto,
-        a.foto_punta,
-        a.foto_tacco,
-        a.foto_accessorio,
-        a.foto_articolo,
-        a.foto_finitura
+        az.brand AS brand_azienda
       FROM articolo a
       LEFT JOIN azienda az ON a.id_azienda = az.id
       WHERE a.id = ?
