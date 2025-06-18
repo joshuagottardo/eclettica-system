@@ -54,13 +54,13 @@ function filtraArticoli(term) {
   }
   filtered.forEach(a => {
     const d = document.createElement("div");
+    d.dataset.id = a.id;
     d.className = "p-3 bg-custom-800 rounded shadow hover:bg-custom-700 cursor-pointer";
     d.innerHTML = `
       <div class="flex justify-between text-white">
         <span>${a.nome}</span>
         <span class="text-neutral-700">${a.brand_azienda}</span>
       </div>`;
-    d.addEventListener("click", () => mostraDettagliArticolo(a.id));
     lista.appendChild(d);
   });
 }
@@ -146,6 +146,10 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("filtroAzienda")?.addEventListener("change", () =>
     filtraArticoli(document.getElementById("searchInput").value)
   );
+  document.getElementById("lista-articoli")?.addEventListener("click", e => {
+    const item = e.target.closest('[data-id]');
+    if (item) mostraDettagliArticolo(item.dataset.id);
+  });
   document.getElementById("toggleFiltri")?.addEventListener("click", () => {
     const wrapper = document.getElementById("filtroWrapper"), ic = document.getElementById("frecciaToggle");
     filtriAperti = !filtriAperti;
