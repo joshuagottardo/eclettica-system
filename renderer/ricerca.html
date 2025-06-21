@@ -112,9 +112,7 @@
         <div
           id="filtroWrapper"
           class="overflow-hidden transition-all duration-500 ease-in-out max-h-0">
-          <div
-            id="filtroSezione"
-            class="space-y-4 border rounded-xl p-6">
+          <div id="filtroSezione" class="space-y-4 border rounded-xl p-6">
             <!-- Filtro tipo -->
             <div>
               <p class="text-sm text-white mb-2">Tipo</p>
@@ -173,26 +171,78 @@
 
       <!-- Colonna destra -->
 
-      <section class="w-1/2 p-6 flex flex-col gap-6 overflow-y-auto" id="dettagli-articolo">
-        <!-- Dettagli articolo -->
-        <div class="bg-custom-800 p-4 rounded shadow space-y-2">
-          <p><strong>Nome:</strong> <span id="dettagli-nome">—</span></p>
-          <p><strong>Brand:</strong> <span id="dettagli-brand">—</span></p>
-          <p><strong>Azienda:</strong> <span id="dettagli-azienda">—</span></p>
-          <p><strong>Tipo:</strong> <span id="dettagli-tipo">—</span></p>
-          <p><strong>Punta:</strong> <span id="dettagli-punta">—</span></p>
-          <p><strong>Tacco:</strong> <span id="dettagli-tacco">—</span></p>
-          <p><strong>Accessori:</strong> <span id="dettagli-accessori">—</span></p>
-          <p><strong>Altezza:</strong> <span id="dettagli-altezza">—</span></p>
-          <p><strong>Pezzi:</strong> <span id="dettagli-pezzi">—</span></p>
-        </div>
+      <section
+        class="w-1/2 flex flex-col items-center justify-center min-h-[calc(100vh-64px)]">
+        <div
+          class="bg-custom-800 rounded-[2.5rem] px-8 py-6 w-[480px] max-w-full shadow-xl mx-auto min-h-[220px]">
+          <div
+            class="rounded-[2rem] bg-custom-600 p-6 mb-4 flex flex-col items-center justify-center min-h-[96px]">
+            <h2
+              class="text-[clamp(1.5rem,5vw,2.7rem)] font-semibold text-white text-center leading-tight break-words [text-wrap:balance]">
+              <span id="dettagli-nome"></span>
+            </h2>
+          </div>
+          <!-- Sottotitolo: brand e azienda -->
+          <div class="text-lg text-gray-300 mb-8 text-center italic">
+            <span id="dettagli-brand"></span> /
+            <span id="dettagli-azienda"></span>
+          </div>
+          <!-- Dati articolo -->
 
-        <!-- Galleria immagini -->
-        <div class="grid grid-cols-3 gap-4" id="galleria-foto">
-          <!-- Le immagini saranno inserite dinamicamente -->
+          <div class="w-full max-w-md mx-auto mt-6">
+            <div class="grid grid-cols-4 gap-y-2 items-center">
+              <div class="text-right pr-4 font-bold text-white col-span-1">
+                TIPO
+              </div>
+              <div
+                class="text-left pl-4 italic text-gray-200 col-span-3"
+                id="dettagli-tipo"></div>
+
+              <div class="text-right pr-4 font-bold text-white col-span-1">
+                PUNTA
+              </div>
+              <div
+                class="text-left pl-4 italic text-gray-200 col-span-3"
+                id="dettagli-punta"></div>
+
+              <div class="text-right pr-4 font-bold text-white col-span-1">
+                TACCO
+              </div>
+              <div
+                class="text-left pl-4 italic text-gray-200 col-span-3"
+                id="dettagli-tacco"></div>
+
+              <div class="text-right pr-4 font-bold text-white col-span-1">
+                ACCESSORI
+              </div>
+              <div
+                class="text-left pl-4 italic text-gray-200 col-span-3"
+                id="dettagli-accessori"></div>
+
+              <div class="text-right pr-4 font-bold text-white col-span-1">
+                ALTEZZA
+              </div>
+              <div
+                class="text-left pl-4 italic text-gray-200 col-span-3"
+                id="dettagli-altezza"></div>
+
+              <div class="text-right pr-4 font-bold text-white col-span-1">
+                PEZZI
+              </div>
+              <div
+                class="text-left pl-4 italic text-gray-200 col-span-3"
+                id="dettagli-pezzi"></div>
+            </div>
+          </div>
         </div>
+        <button>
+          <button
+            id=""
+            class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-[2.5rem] shadow-lg transition mt-6">
+            Vedi dettagli
+          </button>
+        </button>
       </section>
-
     </main>
   </body>
 </html>

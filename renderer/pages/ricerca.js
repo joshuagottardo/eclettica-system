@@ -138,6 +138,20 @@ function apriOverlay(src, alt) {
   document.body.appendChild(overlay);
 }
 
+document.querySelectorAll('input[name="filtroTipo"]').forEach(radio => {
+  radio.addEventListener("click", function() {
+    // Se clicchi su quello già selezionato, lo deselezioni
+    if (selectedTipo === this.value) {
+      this.checked = false;
+      selectedTipo = null;
+    } else {
+      selectedTipo = this.value;
+    }
+    filtraArticoli(document.getElementById("searchInput").value);
+  });
+});
+
+
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("searchInput")?.addEventListener("input", e =>
     filtraArticoli(e.target.value)

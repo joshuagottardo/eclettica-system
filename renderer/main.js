@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const btn = document.getElementById('open-inserimento');
+  const btn = document.getElementById('open-ricerca');
   if (btn) {
     btn.addEventListener('click', () => {
-      window.location.href = 'inserimento.html';
+      window.location.href = 'ricerca.html';
     });
   }
 });

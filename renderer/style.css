@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .image-drop {
   height: clamp(7rem, 15vh, 30rem);
 }
